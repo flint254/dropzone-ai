@@ -1,0 +1,18 @@
+services:
+  dropzone-ai:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DROPZONE_API_KEY: ${DROPZONE_API_KEY:-}
+      DROPZONE_API_KEYS: ${DROPZONE_API_KEYS:-}
+      DROPZONE_DB_PATH: /data/dropzone.db
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://api.openai.com/v1}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4.1-mini}
+      OPENAI_TIMEOUT_SECONDS: ${OPENAI_TIMEOUT_SECONDS:-20}
+    volumes:
+      - dropzone-data:/data
+    restart: unless-stopped
+volumes:
+  dropzone-data:

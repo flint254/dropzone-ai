@@ -1,0 +1,586 @@
+{
+  "version": "dropzone-security-alerts-v2",
+  "description": "32-case synthetic portfolio benchmark covering critical incidents, ambiguous signals, benign lookalikes, identity, endpoint, network, cloud, email, and data-loss alerts. Labels are illustrative and require practitioner adjudication; not production ground truth.",
+  "cases": [
+    {
+      "id": "DZ-001",
+      "expected_priority": "critical",
+      "event": {
+        "source": "benchmark",
+        "event_type": "endpoint_alert",
+        "title": "Ransomware encryption of files",
+        "description": "Rapid mass file rename and encryption of files detected across a server.",
+        "severity": "critical",
+        "asset": "fileserver-01",
+        "user": "svc-backup",
+        "indicators": [
+          "sha256:example-ransomware"
+        ]
+      }
+    },
+    {
+      "id": "DZ-002",
+      "expected_priority": "critical",
+      "event": {
+        "source": "benchmark",
+        "event_type": "data_loss_alert",
+        "title": "Possible data exfiltration",
+        "description": "Large outbound transfer and possible data theft from a sensitive asset.",
+        "severity": "high",
+        "asset": "db-01",
+        "user": "unknown",
+        "indicators": [
+          "198.51.100.20"
+        ]
+      }
+    },
+    {
+      "id": "DZ-003",
+      "expected_priority": "high",
+      "event": {
+        "source": "benchmark",
+        "event_type": "identity_alert",
+        "title": "Password spray detected",
+        "description": "Multiple failed login attempts consistent with password spray against admin account.",
+        "severity": "medium",
+        "asset": "idp",
+        "user": "admin",
+        "indicators": [
+          "203.0.113.8"
+        ]
+      }
+    },
+    {
+      "id": "DZ-004",
+      "expected_priority": "high",
+      "event": {
+        "source": "benchmark",
+        "event_type": "endpoint_alert",
+        "title": "Malware command and control beacon",
+        "description": "Known malicious process shows command and control C2 beacon activity.",
+        "severity": "medium",
+        "asset": "laptop-22",
+        "user": "employee",
+        "indicators": [
+          "example.invalid"
+        ]
+      }
+    },
+    {
+      "id": "DZ-005",
+      "expected_priority": "medium",
+      "event": {
+        "source": "benchmark",
+        "event_type": "identity_alert",
+        "title": "Suspicious login",
+        "description": "Suspicious login detected; validate impossible travel and MFA events.",
+        "severity": "medium",
+        "asset": "identity-provider",
+        "user": "user1",
+        "indicators": []
+      }
+    },
+    {
+      "id": "DZ-006",
+      "expected_priority": "low",
+      "event": {
+        "source": "benchmark",
+        "event_type": "policy_notice",
+        "title": "Informational policy notice",
+        "description": "Routine policy reminder with no suspicious activity reported.",
+        "severity": "informational",
+        "asset": "endpoint-04",
+        "user": "user4",
+        "indicators": []
+      }
+    },
+    {
+      "id": "DZ-007",
+      "expected_priority": "low",
+      "event": {
+        "source": "benchmark",
+        "event_type": "endpoint_notice",
+        "title": "Routine low severity notice",
+        "description": "Scheduled inventory scan completed successfully.",
+        "severity": "low",
+        "asset": "endpoint-08",
+        "user": "service-inventory",
+        "indicators": []
+      }
+    },
+    {
+      "id": "DZ-008",
+      "expected_priority": "medium",
+      "event": {
+        "source": "benchmark",
+        "event_type": "access_alert",
+        "title": "Unusual admin privileges",
+        "description": "Admin privileges observed on a new account; review whether this change was approved.",
+        "severity": "low",
+        "asset": "server-04",
+        "user": "newadmin",
+        "indicators": []
+      }
+    },
+    {
+      "id": "DZ-009",
+      "expected_priority": "high",
+      "event": {
+        "source": "benchmark",
+        "event_type": "identity_alert",
+        "title": "MFA fatigue attempts",
+        "description": "Repeated MFA push prompts reported by a user; no successful login confirmed.",
+        "severity": "medium",
+        "asset": "idp",
+        "user": "user2",
+        "indicators": [
+          "203.0.113.44"
+        ]
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-010",
+      "expected_priority": "critical",
+      "event": {
+        "source": "benchmark",
+        "event_type": "endpoint_alert",
+        "title": "Confirmed ransomware behavior",
+        "description": "Endpoint telemetry reports mass encryption and ransom note creation on a production host.",
+        "severity": "critical",
+        "asset": "app-01",
+        "user": "user5",
+        "indicators": [
+          "sha256:sample-ransomware"
+        ]
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-011",
+      "expected_priority": "medium",
+      "event": {
+        "source": "benchmark",
+        "event_type": "identity_alert",
+        "title": "VPN login from new region",
+        "description": "Successful VPN login from a new region; approved travel and device posture are unknown.",
+        "severity": "medium",
+        "asset": "vpn",
+        "user": "user8",
+        "indicators": [
+          "198.51.100.77"
+        ]
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-012",
+      "expected_priority": "low",
+      "event": {
+        "source": "benchmark",
+        "event_type": "endpoint_notice",
+        "title": "Successful patch installation",
+        "description": "Endpoint reports routine monthly patch installation completed without errors.",
+        "severity": "low",
+        "asset": "workstation-12",
+        "user": "svc-patch",
+        "indicators": []
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-013",
+      "expected_priority": "high",
+      "event": {
+        "source": "benchmark",
+        "event_type": "network_alert",
+        "title": "Repeated outbound DNS to suspicious domain",
+        "description": "Endpoint makes repeated DNS requests to a newly observed suspicious domain; payload evidence is unavailable.",
+        "severity": "high",
+        "asset": "laptop-31",
+        "user": "user9",
+        "indicators": [
+          "bad-domain.example"
+        ]
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-014",
+      "expected_priority": "medium",
+      "event": {
+        "source": "benchmark",
+        "event_type": "access_alert",
+        "title": "New service account created",
+        "description": "A new service account was created; ticket and owner validation are missing.",
+        "severity": "medium",
+        "asset": "directory",
+        "user": "svc-new",
+        "indicators": []
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-015",
+      "expected_priority": "critical",
+      "event": {
+        "source": "benchmark",
+        "event_type": "data_loss_alert",
+        "title": "Sensitive database export and transfer",
+        "description": "Audit logs show export of sensitive customer records followed by outbound transfer to an unapproved destination.",
+        "severity": "critical",
+        "asset": "db-prod",
+        "user": "unknown",
+        "indicators": [
+          "198.51.100.90"
+        ]
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-016",
+      "expected_priority": "low",
+      "event": {
+        "source": "benchmark",
+        "event_type": "policy_notice",
+        "title": "Password expiry reminder",
+        "description": "Routine password expiry notification sent; no authentication anomalies are reported.",
+        "severity": "informational",
+        "asset": "idp",
+        "user": "user10",
+        "indicators": []
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-017",
+      "expected_priority": "high",
+      "event": {
+        "source": "benchmark",
+        "event_type": "identity_alert",
+        "title": "Privileged login after repeated failures",
+        "description": "Privileged account login succeeded after many failed attempts; source and MFA context need validation.",
+        "severity": "high",
+        "asset": "idp",
+        "user": "administrator",
+        "indicators": [
+          "203.0.113.61"
+        ]
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-018",
+      "expected_priority": "medium",
+      "event": {
+        "source": "benchmark",
+        "event_type": "endpoint_alert",
+        "title": "Potential unwanted application detected",
+        "description": "Endpoint tool flagged a potentially unwanted application; execution and impact are not yet established.",
+        "severity": "medium",
+        "asset": "laptop-44",
+        "user": "user11",
+        "indicators": [
+          "sha256:sample-pua"
+        ]
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-019",
+      "expected_priority": "low",
+      "event": {
+        "source": "benchmark",
+        "event_type": "network_notice",
+        "title": "Approved vulnerability scan",
+        "description": "Scheduled vulnerability scanner contacted registered internal hosts during its approved window.",
+        "severity": "low",
+        "asset": "network",
+        "user": "svc-scanner",
+        "indicators": []
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-020",
+      "expected_priority": "high",
+      "event": {
+        "source": "benchmark",
+        "event_type": "cloud_alert",
+        "title": "Public storage access changed",
+        "description": "Cloud storage policy changed to allow public access; data sensitivity and approval status are unknown.",
+        "severity": "high",
+        "asset": "bucket-finance",
+        "user": "cloud-admin",
+        "indicators": []
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-021",
+      "expected_priority": "medium",
+      "event": {
+        "source": "benchmark",
+        "event_type": "email_alert",
+        "title": "Suspicious attachment quarantined",
+        "description": "Email gateway quarantined a suspicious attachment before delivery; user execution is not reported.",
+        "severity": "medium",
+        "asset": "mail-gateway",
+        "user": "user12",
+        "indicators": [
+          "sha256:sample-attachment"
+        ]
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-022",
+      "expected_priority": "critical",
+      "event": {
+        "source": "benchmark",
+        "event_type": "endpoint_alert",
+        "title": "Multiple hosts show ransomware indicators",
+        "description": "Several endpoints report rapid file modifications and ransom-note indicators within a short interval.",
+        "severity": "critical",
+        "asset": "fleet",
+        "user": "unknown",
+        "indicators": [
+          "sha256:sample-ransomware"
+        ]
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-023",
+      "expected_priority": "low",
+      "event": {
+        "source": "benchmark",
+        "event_type": "identity_notice",
+        "title": "Routine token refresh",
+        "description": "Expected application token refresh completed from a known workload identity.",
+        "severity": "low",
+        "asset": "api-gateway",
+        "user": "svc-app",
+        "indicators": []
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-024",
+      "expected_priority": "high",
+      "event": {
+        "source": "benchmark",
+        "event_type": "cloud_alert",
+        "title": "Unusual API key use",
+        "description": "Cloud API key was used from a new network and performed privileged enumeration; owner confirmation is pending.",
+        "severity": "high",
+        "asset": "cloud-control-plane",
+        "user": "svc-deploy",
+        "indicators": [
+          "198.51.100.121"
+        ]
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-025",
+      "expected_priority": "medium",
+      "event": {
+        "source": "benchmark",
+        "event_type": "endpoint_alert",
+        "title": "Unsigned script blocked",
+        "description": "Endpoint protection blocked an unsigned script; no successful execution was observed.",
+        "severity": "medium",
+        "asset": "workstation-55",
+        "user": "user13",
+        "indicators": [
+          "sha256:sample-script"
+        ]
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-026",
+      "expected_priority": "high",
+      "event": {
+        "source": "benchmark",
+        "event_type": "network_alert",
+        "title": "Possible lateral movement",
+        "description": "Multiple internal hosts show unusual remote service connections from one workstation; authentication evidence is incomplete.",
+        "severity": "high",
+        "asset": "workstation-21",
+        "user": "user14",
+        "indicators": [
+          "10.20.1.21"
+        ]
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-027",
+      "expected_priority": "low",
+      "event": {
+        "source": "benchmark",
+        "event_type": "policy_notice",
+        "title": "Inventory agent heartbeat",
+        "description": "Managed inventory agent sent its normal scheduled heartbeat with no anomalies.",
+        "severity": "informational",
+        "asset": "endpoint-16",
+        "user": "svc-inventory",
+        "indicators": []
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-028",
+      "expected_priority": "critical",
+      "event": {
+        "source": "benchmark",
+        "event_type": "identity_alert",
+        "title": "Privileged account takeover indicators",
+        "description": "Privileged account MFA was reset unexpectedly and followed by a successful login from an unknown device.",
+        "severity": "critical",
+        "asset": "identity-provider",
+        "user": "admin2",
+        "indicators": [
+          "203.0.113.199"
+        ]
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-029",
+      "expected_priority": "medium",
+      "event": {
+        "source": "benchmark",
+        "event_type": "email_alert",
+        "title": "Reported phishing message",
+        "description": "User reported a suspicious email; no link click or credential submission has been confirmed.",
+        "severity": "medium",
+        "asset": "mail-gateway",
+        "user": "user15",
+        "indicators": []
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-030",
+      "expected_priority": "high",
+      "event": {
+        "source": "benchmark",
+        "event_type": "data_loss_alert",
+        "title": "Large upload to personal cloud service",
+        "description": "Endpoint telemetry shows a large upload to a personal cloud service from a sensitive workstation; authorization is unknown.",
+        "severity": "high",
+        "asset": "finance-ws-03",
+        "user": "user16",
+        "indicators": [
+          "personal-cloud.example"
+        ]
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-031",
+      "expected_priority": "medium",
+      "event": {
+        "source": "benchmark",
+        "event_type": "access_alert",
+        "title": "Unexpected group membership",
+        "description": "A user was added to a privileged group; change request and approval details are not attached.",
+        "severity": "medium",
+        "asset": "directory",
+        "user": "user17",
+        "indicators": []
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    },
+    {
+      "id": "DZ-032",
+      "expected_priority": "low",
+      "event": {
+        "source": "benchmark",
+        "event_type": "endpoint_notice",
+        "title": "Disk health warning",
+        "description": "Endpoint reports a disk health warning without suspicious process or network activity.",
+        "severity": "low",
+        "asset": "workstation-88",
+        "user": "user18",
+        "indicators": []
+      },
+      "tags": [
+        "synthetic",
+        "expanded-v2"
+      ]
+    }
+  ]
+}

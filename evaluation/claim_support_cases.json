@@ -1,0 +1,186 @@
+{
+  "version": "dropzone-claim-support-v1",
+  "description": "30 manually authored synthetic claim/passage pairs with gold labels: supported, contradicted, or insufficient. Use to calibrate/evaluate the evidence-review agent; labels are intended for portfolio testing and should be independently reviewed.",
+  "cases": [
+    {
+      "id": "CS-001",
+      "gold_verdict": "supported",
+      "claim": "The procedure says to validate alerts against original source logs.",
+      "passage": "Validate the alert against original source logs and nearby events."
+    },
+    {
+      "id": "CS-002",
+      "gold_verdict": "contradicted",
+      "claim": "The procedure says account disablement may be done automatically without approval.",
+      "passage": "Account disablement, session revocation, and credential reset require an authorized human decision under local policy."
+    },
+    {
+      "id": "CS-003",
+      "gold_verdict": "insufficient",
+      "claim": "The passage proves the user account was compromised.",
+      "passage": "Review authentication logs, MFA events, session history, and recent account changes."
+    },
+    {
+      "id": "CS-004",
+      "gold_verdict": "supported",
+      "claim": "Disruptive actions require authorized human review.",
+      "passage": "Disruptive actions such as disabling accounts, blocking addresses, isolating hosts, deleting files, or changing firewall rules must be performed only by authorized staff after review."
+    },
+    {
+      "id": "CS-005",
+      "gold_verdict": "contradicted",
+      "claim": "A high severity alert proves an incident is confirmed.",
+      "passage": "A high severity alert is not proof that an incident is confirmed."
+    },
+    {
+      "id": "CS-006",
+      "gold_verdict": "supported",
+      "claim": "Preserve relevant logs and evidence according to the organization procedure.",
+      "passage": "Preserve relevant logs and evidence using the organization's evidence-handling procedure."
+    },
+    {
+      "id": "CS-007",
+      "gold_verdict": "insufficient",
+      "claim": "The affected endpoint is definitely infected with ransomware.",
+      "passage": "Correlate endpoint alerts, process execution, file activity, network telemetry, and neighboring hosts."
+    },
+    {
+      "id": "CS-008",
+      "gold_verdict": "supported",
+      "claim": "For possible account compromise, check MFA events and session history.",
+      "passage": "Review authentication logs, MFA events, session history, and recent account changes."
+    },
+    {
+      "id": "CS-009",
+      "gold_verdict": "contradicted",
+      "claim": "The prototype automatically isolates systems when malware is detected.",
+      "passage": "Do not run destructive commands or isolate systems automatically from this prototype."
+    },
+    {
+      "id": "CS-010",
+      "gold_verdict": "supported",
+      "claim": "Confidence and severity describe different things.",
+      "passage": "Severity describes potential impact and urgency; confidence describes how well evidence supports the hypothesis."
+    },
+    {
+      "id": "CS-011",
+      "gold_verdict": "insufficient",
+      "claim": "The IP address 203.0.113.8 is malicious.",
+      "passage": "Review authentication logs, MFA events, session history, and recent account changes."
+    },
+    {
+      "id": "CS-012",
+      "gold_verdict": "contradicted",
+      "claim": "The response plan says to delete suspicious files immediately.",
+      "passage": "Preserve relevant endpoint and network evidence where practical."
+    },
+    {
+      "id": "CS-013",
+      "gold_verdict": "supported",
+      "claim": "The response plan says to record source, time, analyst, and reasoning.",
+      "passage": "Record the source, time, analyst, and reasoning for each decision."
+    },
+    {
+      "id": "CS-014",
+      "gold_verdict": "insufficient",
+      "claim": "The login came from an attacker-controlled device.",
+      "passage": "Check whether the activity is expected, including approved VPNs, travel, automation, or service accounts."
+    },
+    {
+      "id": "CS-015",
+      "gold_verdict": "contradicted",
+      "claim": "Account disablement does not require a human decision.",
+      "passage": "Account disablement, session revocation, and credential reset require an authorized human decision under local policy."
+    },
+    {
+      "id": "CS-016",
+      "gold_verdict": "supported",
+      "claim": "Investigators should separate observed facts from hypotheses.",
+      "passage": "Separate observed facts from assumptions and hypotheses."
+    },
+    {
+      "id": "CS-017",
+      "gold_verdict": "insufficient",
+      "claim": "The alert affected 17 hosts.",
+      "passage": "Correlate endpoint alerts, process execution, file activity, network telemetry, and neighboring hosts."
+    },
+    {
+      "id": "CS-018",
+      "gold_verdict": "supported",
+      "claim": "A human reviewer must approve disruptive containment steps.",
+      "passage": "Disruptive actions such as disabling accounts, blocking addresses, isolating hosts, deleting files, or changing firewall rules must be performed only by authorized staff after review."
+    },
+    {
+      "id": "CS-019",
+      "gold_verdict": "contradicted",
+      "claim": "The guide says to treat high severity as proof of compromise.",
+      "passage": "A high severity alert is not proof that an incident is confirmed."
+    },
+    {
+      "id": "CS-020",
+      "gold_verdict": "insufficient",
+      "claim": "The cloud storage policy change was authorized.",
+      "passage": "Record the source, time, analyst, and reasoning for each decision."
+    },
+    {
+      "id": "CS-021",
+      "gold_verdict": "supported",
+      "claim": "Investigators should revisit an assessment when new evidence arrives.",
+      "passage": "Record missing information and revisit the assessment when new evidence arrives."
+    },
+    {
+      "id": "CS-022",
+      "gold_verdict": "contradicted",
+      "claim": "The prototype can execute destructive commands.",
+      "passage": "Do not run destructive commands or isolate systems automatically from this prototype."
+    },
+    {
+      "id": "CS-023",
+      "gold_verdict": "insufficient",
+      "claim": "The user clicked the phishing link.",
+      "passage": "A high severity alert is not proof that an incident is confirmed."
+    },
+    {
+      "id": "CS-024",
+      "gold_verdict": "supported",
+      "claim": "Check whether suspicious account activity might be explained by approved travel or VPN.",
+      "passage": "Check whether the activity is expected, including approved VPNs, travel, automation, or service accounts."
+    },
+    {
+      "id": "CS-025",
+      "gold_verdict": "contradicted",
+      "claim": "The guide recommends disabling accounts without authorization.",
+      "passage": "Account disablement, session revocation, and credential reset require an authorized human decision under local policy."
+    },
+    {
+      "id": "CS-026",
+      "gold_verdict": "supported",
+      "claim": "The incident commander or authorized responder should assess containment options.",
+      "passage": "Ask the incident commander or authorized responder to assess containment options."
+    },
+    {
+      "id": "CS-027",
+      "gold_verdict": "insufficient",
+      "claim": "The malware reached every neighboring host.",
+      "passage": "Correlate endpoint alerts, process execution, file activity, network telemetry, and neighboring hosts."
+    },
+    {
+      "id": "CS-028",
+      "gold_verdict": "supported",
+      "claim": "Keep an audit record of recommendation, reviewer, decision, time, and rationale.",
+      "passage": "Keep an audit record of the recommendation, reviewer, decision, time, and rationale."
+    },
+    {
+      "id": "CS-029",
+      "gold_verdict": "contradicted",
+      "claim": "The procedure says to run destructive commands automatically.",
+      "passage": "Do not run destructive commands or isolate systems automatically from this prototype."
+    },
+    {
+      "id": "CS-030",
+      "gold_verdict": "insufficient",
+      "claim": "The account takeover is confirmed.",
+      "passage": "Escalate to the authorized identity/security team if compromise remains plausible."
+    }
+  ]
+}

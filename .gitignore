@@ -1,0 +1,7 @@
+.env
+__pycache__/
+.pytest_cache/
+*.py[cod]
+dropzone.db
+.venv/
+app/oracleJdk-27/
